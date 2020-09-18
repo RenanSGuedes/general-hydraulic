@@ -1,0 +1,159 @@
+\documentclass[
+	a4paper, 
+	12pt, 
+	brazilian
+]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{siunitx}
+
+\usepackage[
+top=2cm,
+right=3cm,
+bottom=2cm,
+left=3cm
+]{geometry}
+
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{import}
+\usepackage{float}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{bm}
+
+\newcommand{\txt}[1]{\textrm{#1}}
+
+\usepackage{config}
+
+\begin{document}
+	\section{Sistemas de unidades}
+	
+	\begin{itemize}
+		\item\textbf{Sistemas M.L.T. (Mass/Length/Time)}
+			\begin{enumerate}
+				\item Sistema Internacional (S.I.)
+				\item Sistema C.G.S.
+			\end{enumerate}
+		\item\textbf{Sistemas F.L.T. (Force/Length/Time)}
+			\begin{enumerate}
+				\item Sistema Técnico (S.T.)
+			\end{enumerate}
+	\end{itemize}
+	\import{assets/tables/}{sistemas_de_unidades}
+	\begin{itemize}
+		\item\textbf{Força}
+		\begin{equation}
+			\bm{F}=m\,\bm{a}
+		\end{equation}
+		No S.I.
+		\begin{equation}
+			[\,F\,]=\SI{}{\kilogram\,\dfrac{\meter}{\second^{2}}}=\SI{}{\newton}
+		\end{equation}
+		No C.G.S.
+		\begin{equation}
+			[\,F\,]=\SI{}{\gram\,\dfrac{\centi\meter}{\second^{2}}}=\SI{}{dyn\,(dina)}
+		\end{equation}
+		\item\textbf{Massa (unidade derivada)}
+		\begin{equation}
+			[\,m\,]=\left[\,\dfrac{F}{a}\,\right]=\dfrac{\SI{}{kgf}}{\SI{}{\meter/\second^{2}}}=\SI{}{\dfrac{kgf\cdot\second^{2}}{\meter}}
+		\end{equation}
+		\item\textbf{Energia}
+		\begin{equation}
+			E=F\,d
+		\end{equation}
+		No S.I.
+		\begin{equation}
+			[\,E\,]=\SI{}{\newton\cdot\meter}=\SI{}{\joule}
+		\end{equation}
+		No C.G.S.
+		\begin{equation}
+			[\,E\,]=\SI{}{dyn\cdot\centi\meter}=\SI{}{erg}
+		\end{equation}
+		No S.T.
+		\begin{equation}
+			[\,E\,]=\SI{}{kgf\cdot\meter}
+		\end{equation}
+		\item\textbf{Potência}
+		\begin{equation}
+			P=\dfrac{E}{t}
+		\end{equation}
+		No S.I.
+		\begin{equation}
+			[\,P\,]=\SI{}{\dfrac{\joule}{\second}}=\SI{}{\watt}
+		\end{equation}
+		No C.G.S.
+		\begin{equation}
+			[\,P\,]=\SI{}{\dfrac{erg}{\second}}
+		\end{equation}
+		No S.T.
+		\begin{equation}
+			[\,P\,]=\SI{}{\dfrac{kgf\cdot\meter}{\second}}
+		\end{equation}
+		\item\textbf{Pressão}
+		\begin{equation}
+			p=\dfrac{F}{A}
+		\end{equation}
+		\begin{equation}
+			\SI{1}{\bar}=\SI{e6}{baria}
+		\end{equation}
+		No S.I.
+		\begin{equation}
+			[\,p\,]=\SI{}{\dfrac{\newton}{\meter^{2}}}=\SI{}{\pascal}
+		\end{equation}
+		No C.G.S.
+		\begin{equation}
+			[\,p\,]=\SI{}{\dfrac{dyn}{\centi\meter^{2}}}=\SI{}{baria}
+		\end{equation}
+		No S.T.
+		\begin{equation}
+			[\,p\,]=\SI{}{\dfrac{kgf}{\meter^{2}}}
+		\end{equation}
+	\end{itemize}
+	\subsection{Conversão de unidades}
+	\textbf{Exemplos}
+	\begin{enumerate}
+		\item[(a)]$\SI{}{\liter/\minute}\rightarrow\SI{}{\meter^{3}/\hour}$
+		\begin{eqnarray}
+			1\SI{}{\dfrac{\liter}{\minute}}&=&\dfrac{10^{-3}}{1/60}\SI{}{\dfrac{\meter^{3}}{\hour}}\\
+			&=&\SI{.06}{\dfrac{\meter^{3}}{\hour}}	
+		\end{eqnarray}
+		\item[(b)]$\SI{}{\meter^{3}/\hectare}\rightarrow\SI{}{\liter/\meter^{2}}$
+		\begin{equation}
+			\SI{1}{\hectare}=\SI{100}{\meter}\times\SI{100}{\meter}=\SI{10000}{\meter^{2}}
+		\end{equation}
+		\begin{eqnarray}
+			\SI{1}{\dfrac{\meter^{3}}{\hectare}}&=&\dfrac{10^{3}}{10^{4}}\SI{}{\dfrac{\liter}{\meter^{2}}}\\
+			&=&\SI{.1}{\dfrac{\liter}{\meter^{2}}}
+		\end{eqnarray}
+		\item[(c)]$\SI{}{kgf/\centi\meter^{2}}\rightarrow\SI{}{\pascal}$
+		\begin{equation}
+			\SI{1}{kgf}=\SI{9.81}{\newton}
+		\end{equation}
+		\begin{eqnarray}
+			\SI{1}{\dfrac{kgf}{\centi\meter^{2}}}&=&\dfrac{9.81}{10^{-4}}\SI{}{\dfrac{\newton}{\meter^{2}}}\\
+			&=&\SI{98100}{\pascal}
+		\end{eqnarray}
+	\end{enumerate}
+	\subsection{Conversões notáveis}
+	\begin{enumerate}
+		\item$\SI{1}{in}=\SI{25.4}{\milli\meter}$
+		\item$\SI{1}{\hectare}=\SI{10000}{\meter^{2}}$
+		\item$\SI{1}{\meter^{3}}=\SI{1000}{\liter}$
+		\item$\SI{1}{kgf}=\SI{9.81}{\newton}$
+		\item$\SI{1}{lbf}=\SI{.4536}{kgf}=\SI{4.448}{\newton}$
+		\item$\SI{1}{lbf/in^{2}}=\SI{1}{psi}\,\,\textrm{(pound force per inch)}$
+		\item$\SI{1}{\bar}=\SI{e6}{baria}=\SI{14.504}{psi}=\SI{100}{\kilo\pascal}$
+		\item$\SI{1}{atm}=\SI{101.325}{\kilo\pascal}$
+		\item$\SI{1}{cv}=\SI{736}{\watt}$
+		\item$\SI{1}{hp}=\SI{746}{\watt}$
+	\end{enumerate}
+
+	
+\end{document}
