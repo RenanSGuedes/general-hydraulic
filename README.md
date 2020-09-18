@@ -1,4 +1,4 @@
-# Hidráulica Geral - FA676
+# :black_medium_square: Hidráulica Geral - FA676 :black_medium_square:
 
 <p align="center">
     <img width="80%" src="assets/agriculture.jpg">
@@ -6,8 +6,61 @@
 
 - [x] Parte 1
     * Sistemas de Unidades
+            <table>
+            <thead>
+              <tr>
+                <th>Grandeza</th>
+                <th>SI</th>
+                <th>CGS</th>
+                <th>ST</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Massa</td>
+                <td>kg</td>
+                <td>g</td>
+                <td>utm</td>
+              </tr>
+              <tr>
+                <td>Comprimento</td>
+                <td>m</td>
+                <td>cm</td>
+                <td>m</td>
+              </tr>
+              <tr>
+                <td>Tempo </td>
+                <td>s</td>
+                <td>s</td>
+                <td>s</td>
+              </tr>
+              <tr>
+                <td>Força</td>
+                <td>N</td>
+                <td>dina</td>
+                <td>kgf</td>
+              </tr>
+            </tbody>
+            </table>
+        * Sistemas MLT (Mass, Length, Time)
+            * Sistema Internacional (SI)
+            * Sistema CGS (Centimeter, Gram, Second)
+        * Sistemas FLT
+            * Sistema técnico
+    
     * Propriedades físicas da água
-    * hidrostática
+        * Massa específica
+        * Peso específico
+        * Densidade
+        * Viscosidade
+        * Compressibilidade
+        * Tensão superficial
+        * Capilaridade
+        * Pressão de vapor
+    * Hidrostática
+        * Lei de Stevin
+        * Pressão relativa e absoluta
+        * Instrumentos de medição de pressão
 - [ ] Parte 2
     * Hidrodinâmica
 - [ ] Parte 3

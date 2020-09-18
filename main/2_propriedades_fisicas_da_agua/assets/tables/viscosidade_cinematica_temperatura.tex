@@ -1,0 +1,17 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Fluido &
+		\begin{tabular}[c]{@{}c@{}}Temperatura\\ (\SI{}{\SIUnitSymbolCelsius})\end{tabular} &
+		\begin{tabular}[c]{@{}c@{}}Viscosidade\\ cinemática\\ ($\SI{e-6}{\meter^{2}/\second}$)\end{tabular} \\ \hline
+		\multirow{2}{*}{Água} &
+		4 &
+		\SI{1.567}{} \\ \cline{2-3} 
+		&
+		20 &
+		\SI{1.007}{} \\ \hline
+	\end{tabular}
+\end{table}
