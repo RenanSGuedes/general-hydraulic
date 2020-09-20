@@ -139,4 +139,77 @@ left=3cm
 		h&=&\dfrac{\cancel{9.81}\cdot (13600-1000)\cdot 10.9\cdot 10^{-2}-\cancel{9.81}\cdot 1000\cdot 29.2\cdot 10^{-2}}{\cancel{9.81}\cdot 1000}\\
 		&=&\SI{1.0814}{\meter}\approx\SI{108.1}{\centi\meter}
 	\end{eqnarray}
+	\section{Terceira questão}
+	Calcular a altura $h$ em \SI{}{\centi\meter} e apresentar o resultado com duas casas decimais.\\\vspace{.5cm}
+	
+	\textbf{Dados:}
+	\begin{itemize}
+		\item Pressão no ponto $A$:\\ 
+		$p_{A}=\SI{148.67}{\kilo\pascal}$
+		\item $X=\SI{59.4}{\centi\meter}$
+		\item $Y=\SI{65.5}{\centi\meter}$
+		\item Densidade do ar é desprezível.\\
+		Pode-se assumir que a pressão\\
+		é a mesma em todo o volume\\
+		ocupado pelo ar.
+		\item $\rho_{1}=\SI{1}{\gram/\centi\meter^{3}}$
+		\item $\rho_{2}=\SI{13.6}{\gram/\centi\meter^{3}}$
+		\item $\gamma_{4}=\SI{.13}{lbf/in^{3}}$
+		\begin{itemize}
+			\item $\SI{1}{lbf}=\SI{4.448}{\newton}$
+			\item $\SI{1}{in}=\SI{25.4}{\milli\meter}$
+			\item $g=\SI{9.81}{\meter/\second^{2}}$
+		\end{itemize}
+		\vspace{-11cm}
+		\begin{flushright}
+			\includegraphics[width=.6\linewidth]{assets/images/ex3}
+		\end{flushright}
+	\end{itemize}
+	\newpage
+	\begin{enumerate}
+		\item[(1)] Ao analisar o tubo contendo ar e o fluido 4, é preciso estabelecer o referencial igual ao que foi feito anteriormente, porém nesse exercício a pressão que o ar exerce no ponto 1 não é desprezível, tendo em vista que suas moléculas confinadas no volume, ao serem aproximadas (compressão), mantêm em equilíbrio o fluido presente no tubo. Para encontrar a equação que relaciona $X$, $Y$, $\gamma_{2}$, $\gamma_{3}$ podem ser utilizados alguns caminhos. A partir de um sistema de equações como é visto a seguir, temos\\
+		
+		eqs.$
+		\begin{cases}
+			p_{A}-p_{B}=\gamma_{3}\cdot Y\\
+			p_{B}-p_{\textrm{Ar}}=\gamma_{2}\cdot X
+		\end{cases}
+		$\\\\\\
+		\noindent Ao somar as duas equações\\
+		
+		$p_{A}-p_{\textrm{Ar}}=\gamma_{2}\cdot X+\gamma_{3}\cdot Y$
+		
+		$p_{\textrm{Ar}}=p_{A}-\gamma_{2}\cdot X-\gamma_{3}\cdot Y$
+		\vspace{-4.5cm}
+		\begin{flushright}
+			\includegraphics[width=.625\linewidth]{assets/images/pontos_3}
+		\end{flushright}
+		\item[(2)] Substituindo os dados do exercício conforme o SI, vem
+		\begin{eqnarray}
+			p_{\textrm{Ar}}&=&148\,670-1000\cdot 0.594-13600\cdot 0.655\\
+			&=&\SI{139168}{\pascal}
+		\end{eqnarray}
+		\newpage
+		\item[(3)] Após analisar o tubo com o fluido 4 e estabelecer o referencial visto abaixo, temos
+		\begin{center}
+			\includegraphics[width=.625\linewidth]{assets/images/pontos_3_1}
+		\end{center}
+		\begin{equation}
+			p_{\textrm{Ar}}=p_{2}=p_{3}+\gamma_{4}\cdot h
+		\end{equation}
+		Como $p_{3}$ é desprezível
+		\begin{equation}
+			h=\dfrac{p_{\textrm{Ar}}}{\gamma_{4}}
+		\end{equation}
+		\item[(4)] Antes de substituir é preciso converter o peso específico fornecido em $\SI{}{lbf/in^{3}}$ para $\SI{}{\newton/\meter^{3}}$
+		\begin{eqnarray}
+			\gamma_{4}&=&\SI{0.13}{\dfrac{lbf}{in^{3}}}\\
+			&=&\dfrac{0.13\cdot 4.448}{0.0254^{3}}\SI{}{\dfrac{\newton}{\meter^{3}}}\\
+			&=&\SI{35286.3697853}{\dfrac{\newton}{\meter^{3}}}
+		\end{eqnarray}
+		\item[(5)] Assim
+		\begin{equation}
+			h=\SI{3.9439}{\meter}=\SI{394.39}{\centi\meter}
+		\end{equation}
+	\end{enumerate}
 \end{document}
