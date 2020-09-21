@@ -212,4 +212,43 @@ left=3cm
 			h=\SI{3.9439}{\meter}=\SI{394.39}{\centi\meter}
 		\end{equation}
 	\end{enumerate}
+	\section{Quarta questão}
+	Para a figura apresentada, calcular a pressão absoluta no final do tubo, onde há uma câmara contendo ar comprimido. Resposta em \SI{}{\kilo\pascal} com uma casa decimal.\\\vspace{.5cm}
+	
+	\textbf{Dados:}
+	\begin{itemize}
+		\item $a=\SI{4}{in}$
+		\item $b=\SI{16.4}{in}$
+		\item $\beta=\SI{72.7}{\SIUnitSymbolDegree}$
+		\item $d_{l}=9.5$
+		\item $p_{\textrm{atm}}=\SI{101325}{\newton/\meter^{2}}$
+		\item $\SI{1}{in}=\SI{2.54}{\centi\meter}$
+		\item $\rho_{\ce{H2O}}=\SI{1000}{\kilogram/\meter^{3}}$ (substância padrão)
+		\item $g=\SI{9.81}{\meter/\second^{2}}$
+		\item Dica: A massa específica do ar é desprezível e pode-se assumir que a pressão é a mesma em todo o volume ocupado por ar comprimido.
+	\end{itemize}
+	\begin{center}
+		\includegraphics[width=1\linewidth]{assets/images/ex4}
+	\end{center}
+	Após marcar o ponto 1 e considerar que ele está sujeito à pressão atmosférica, adotando o referencial apresentado abaixo é possível escrever
+	\begin{center}
+		\includegraphics[width=1\linewidth]{assets/images/referencia_4}
+	\end{center}
+	\begin{equation}
+		p_{1}=p_{\textrm{atm}}=p_{a}
+	\end{equation}
+	Fazendo $p_{a}-p_{b}$ temos
+	\begin{eqnarray}
+		p_{a}-p_{b}&=&\gamma_{l}\cdot\Delta h\\
+		&=&\gamma_{l}\cdot (b-a)\cdot\sin\beta\\
+		&=&\rho_{l}\cdot g\cdot (b-a)\cdot\sin\beta\\
+		&=&9500\cdot 9.81\cdot (16.4-4)\cdot 0.0254\cdot\sin\SI{72.7}{\SIUnitSymbolDegree}\\
+		&=&\SI{28024.8046462}{\pascal}
+	\end{eqnarray}
+	Como $p_{1}=p_{a}$ podemos escrever
+	\begin{eqnarray}
+		101\,325-p_{b}&=&28\,024.804\,646\,2\\
+		p_{b}&=&\SI{73\,300.1953538}{\pascal}\\
+		p_{b}&=&p=\SI{73.3}{\kilo\pascal}
+	\end{eqnarray}
 \end{document}
