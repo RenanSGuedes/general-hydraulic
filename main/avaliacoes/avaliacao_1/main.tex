@@ -251,4 +251,58 @@ left=3cm
 		p_{b}&=&\SI{73\,300.1953538}{\pascal}\\
 		p_{b}&=&p=\SI{73.3}{\kilo\pascal}
 	\end{eqnarray}
+	\section{Quinta questão}
+	Calcule a pressão relativa indicada pelo manovacuômetro para a situação ilustrada abaixo. Resposta em \SI{}{\milli\bar} (milibar) com uma casa decimal. Caso a pressão seja negativa, o resultado deve conter o sinal negativo.\vspace{.5cm}
+	
+	\textbf{Dados:}
+	\begin{enumerate}
+		\item Densidade dos fluidos indicados no desenho:
+		\begin{itemize}
+			\item $d_{A}=2.3$
+			\item $d_{B}=5.4$
+			\item $d_{C}=1.3$
+			\item $d_{D}=6.9$
+		\end{itemize}
+		\item Comprimento em polegadas ('')
+		\item $\SI{1}{in}=\SI{2.53}{\centi\meter}$
+		\item Massa específica da água (substância padrão):\\
+		$\rho_{\ce{H2O}}=\SI{1000}{\kilogram/\meter^{3}}$
+		\item $g=\SI{9.81}{\meter/\second^{2}}$
+		\item A massa específica do ar é desprezível e pode-se assumir que a pressão é a mesma em todo o volume do tanque ocupado por ar.
+	\end{enumerate}
+	\begin{center}
+		\includegraphics[width=.7\linewidth]{assets/images/ex5}
+	\end{center}
+	Com base nas cotas tracejadas feitas nos tubos ao realizar a análise percorrendo o sistema partindo do tubo com a extremidade sujeita à pressão atmosférica e tendo como referência os pontos numerados de 1 a 8
+	\begin{center}
+		\includegraphics[width=.7\linewidth]{assets/images/pontos_5}
+	\end{center}
+	\begin{equation}
+		p_{8}=p_{7}=p_{\textrm{atm}}=0
+	\end{equation}
+	\begin{eqnarray}
+		\cancel{p_{7}}-p_{6}&=&\gamma_{D}\cdot 4''\\
+		p_{6}&=&p_{5}=\gamma_{D}\cdot 4''
+	\end{eqnarray}
+	\begin{eqnarray}
+		p_{4}-p_{5}&=&\gamma_{C}\cdot 3''\\
+		p_{4}&=&\gamma_{C}\cdot 3''+\gamma_{D}\cdot 4''
+	\end{eqnarray}
+	Como $p_{4}=p_{3}$
+	\begin{eqnarray}
+		p_{3}-p_{2}&=&\gamma_{B}\cdot 2''\\
+		p_{2}&=&\gamma_{C}\cdot 3''+\gamma_{D}\cdot 4'-\gamma_{B}\cdot 2''
+	\end{eqnarray}
+	\begin{eqnarray}
+		p_{2}-p_{1}&=&\gamma_{A}\cdot 5''\\
+		p_{1}&=&\gamma_{C}\cdot 3''+\gamma_{D}\cdot 4''-\gamma_{B}\cdot 2''-\gamma_{A}\cdot 5''
+	\end{eqnarray}
+	\begin{eqnarray}
+		p_{1}&=&p\\
+		&=&(\rho_{C}\cdot 3+\rho_{D}\cdot 4-\rho_{B}\cdot 2-\rho_{A}\cdot 5)\cdot g\cdot\xi\\
+		&=&(1300\cdot 3+6900\cdot 4-5400\cdot 2-2300\cdot 5)\cdot 9.81\cdot 0.0254\\
+		&=&\SI{2292.4008}{\pascal}\\
+		&=&2.2924008\cdot 0.01\\
+		&=&\SI{22.9}{\milli bar}
+	\end{eqnarray}
 \end{document}
