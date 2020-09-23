@@ -63,35 +63,40 @@ left=3cm
 		\item[(3)] Agora basta aplicar a lógica assimilada na parte de manômetros diferenciais e formular as equações para cada par de pontos como é visto abaixo
 		$$
 		\begin{cases}
-			p_{1}-p=\gamma_{\ce{H2O}}\cdot Z\\
-			p_{2}-p_{3}=\gamma_{2}\cdot\Delta h
+			p_{1}-p_{4}=\gamma_{1}\cdot Y\\
+			p_{4}-p=\gamma_{\ce{H2O}}\cdot Z
 		\end{cases}
 		$$
-		\item[(4)] Aplicando os conceitos vistos em hidrostática, sabemos que pontos na mesma cota apresentam a mesma pressão (1 e 2), logo
-		\begin{eqnarray}
-			p_{1}&=&p_{2}\\
-			p+\gamma_{\ce{H2O}}\cdot Z&=&p_{3}+\gamma_{2}\cdot\Delta h
-		\end{eqnarray}
-		\item[(5)] Como a pressão atuante em 3 é a atmosférica podemos desprezá-la para o sistema analisado, assim ao isolar $p$ obtemos
-		\begin{eqnarray}
-			p=\gamma_{2}\cdot\Delta h-\gamma_{\ce{H2O}}\cdot Z
-		\end{eqnarray}
-		\item[(6)] Podemos considerar, por trigonometria, que $\Delta h=X\cdot\sin (\beta)-Y$ e que $\gamma=\rho\cdot g$, então
-		\begin{eqnarray}
-			p&=&\rho_{2}\cdot g\cdot (X\cdot\sin(\beta)-Y)-\rho_{\ce{H2O}}\cdot g\cdot Z\\
-			&=&g\cdot\big(\rho_{2}\cdot (X\cdot\sin(\beta)-Y)-\rho_{\ce{H2O}}\cdot Z\big)
-		\end{eqnarray}
-		\item[(7)] Por fim, é necessário considerar as unidades no SI e converter as massas específicas dadas em gramas por centímetro cúbico ($\SI{}{\gram/\centi\meter^{3}}$) para quilogramas por metro cúbico ($\SI{}{\kilogram/\meter^{3}}$)
+		Consequentemente
+		\begin{equation}\label{eq1}
+			p_{1}-p=\gamma_{1}\cdot Y+\gamma_{\ce{H2O}}\cdot Z
+		\end{equation}
+		\item[(4)] Aplicando os conceitos vistos em hidrostática, sabemos que pontos na mesma cota e \textbf{fluido} apresentam a mesma pressão (1 e 2), logo
+		\begin{equation}
+			p_{1}=p_{2}
+		\end{equation}
+		Ao analisar o tubo contendo o fluido 2
+		\begin{equation}
+			p_{2}-p_{3}=\gamma_{2}\cdot X\cdot\sin\beta
+		\end{equation}
+		Como p$_{3}=0$ e $p_{1}=p_{2}$
+		\begin{equation}
+			p_{1}=\gamma_{2}\cdot X\cdot\sin\beta
+		\end{equation}
+		Voltando em \eqref{eq1} e substituindo chegamos que
+		\begin{equation}
+			p=\gamma_{2}\cdot X\cdot\sin\beta-\gamma_{1}\cdot Y-\gamma_{\ce{H2O}}\cdot Z
+		\end{equation}
+		\item[(5)] Por fim, é necessário considerar as unidades no SI e converter as massas específicas dadas em gramas por centímetro cúbico ($\SI{}{\gram/\centi\meter^{3}}$) para quilogramas por metro cúbico ($\SI{}{\kilogram/\meter^{3}}$)
 		\begin{eqnarray}
 			\SI{}{\dfrac{\gram}{\centi\meter^{3}}}&=&\dfrac{10^{-3}}{(10^{-2})^{3}}\SI{}{\dfrac{\kilogram}{\meter^{3}}}\\
 			&=&\dfrac{10^{-3}}{10^{-6}}\SI{}{\dfrac{\kilogram}{\meter^{3}}}\\
 			&=&\SI{1000}{\dfrac{\kilogram}{\meter^{3}}}
 		\end{eqnarray}
-		\item[(8)] Ao multiplicar os valores de massa específica em gramas por centímetro cúbico por 1000 e substituir o restante dos valores de comprimento (em metros) na equação obtida para $p$, obtemos que $p$ será
+		\item[(6)] Ao multiplicar os valores de massa específica em gramas por centímetro cúbico por 1000 e substituir o restante dos valores de comprimento (em metros) na equação obtida para $p$
 		\begin{eqnarray}
-			p&=&9.81\cdot\big(8300\cdot(18.4\cdot 10^{-2}\cdot\sin\SI{67.4}{\SIUnitSymbolDegree}-8.3\cdot 10^{-2})-\\
-			&-&1000\cdot 21.9\cdot 10^{-2}\big)\\
-			&=&\SI{4924.9}{\pascal}\approx\SI{4.9}{\kilo\pascal}
+			p&=&8300\cdot 0.184\cdot\sin\SI{67.4}{\SIUnitSymbolDegree}-13\,100\cdot 0.083-1000\cdot 0.219\\
+			&=&\SI{103.6}{\pascal}\approx\SI{0.1}{\kilo\pascal}
 		\end{eqnarray}
 	\end{enumerate}
 	\section{Segunda questão}
