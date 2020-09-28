@@ -172,4 +172,44 @@ left=3cm
 			 &=&9\,810\cdot\left(\dfrac{2^{2}-0.1367^{2}}{2\cdot 9.81}+\dfrac{331\,000}{9\,810}-4.9\right)\\
 			 &=&\SI{284921.653}{\pascal}=\SI{284.92}{\kilo\pascal}
 	\end{eqnarray}
+	\section{Quarta questão}
+	Na figura, os diâmetros da sucção e recalque são de 3 e 2 polegadas, respectivamente. As pressões relativas nos pontos 1 e 2 são \SI{-12.9}{\kilo\pascal} e \SI{336.8}{\kilo\pascal}, respectivamente. Pela tubulação passa água na vazão de \SI{1093}{\liter/\minute}. A perda de carga entre os pontos 1 e 2 é de \SI{1.25}{\meter} e o desnível vertical $h$ é de \SI{9.1}{\meter}. Calcule a potência hidráulica da bomba em cv (uma casa decimal).
+	\begin{center}
+		\includegraphics[width=.55\linewidth]{assets/images/ex4}
+	\end{center}
+	\begin{itemize}
+		\item $\SI{735}{\watt}=\SI{1}{cv}$
+		\item $\gamma_{\ce{H2O}}=\SI{9810}{\newton/\meter^{3}}$
+		\item Água escoa de 1 para 2.
+		\item Desprezar variação de carga cinética. entre os pontos 1 e 2.
+	\end{itemize}
+	\subsection{Solução}
+	Inicialmente é necessário converter a vazão dada em litros por minuto (\SI{}{\liter/\minute}) para metros cúbicos por segundo ($\SI{}{\meter^{3}/\second}$), assim
+	\begin{eqnarray}
+		Q&=&\SI{1093}{\liter/\minute}\\
+		 &=&\dfrac{1093\cdot 10^{-3}}{60}\SI{}{\dfrac{\meter^{3}}{\second}}\\
+		 &=&\SI{1.821667e-2}{\meter^{3}/\second}
+	\end{eqnarray}
+	Aplicando Bernoulli contabilizando o efeito da bomba do lado esquerdo da equação, obtemos
+	\begin{equation}
+		Z_{1}+\dfrac{v_{1}^{2}}{2g}+\dfrac{p_{1}}{\gamma_{\ce{H2O}}}+h_{b}=Z_{2}+\dfrac{v_{2}^{2}}{2g}+\dfrac{p_{2}}{\gamma_{\ce{H2O}}}+hf_{1-2}\\
+	\end{equation}
+	Ao desprezar a cota no ponto 1, os dois termos de carga cinética em cada lado da equação anterior e isolar $h_{b}$, temos
+	\begin{equation}
+		h_{b}=\dfrac{p_{2}-p_{1}}{\gamma_{\ce{H2O}}}+Z_{2}+hf_{1-2}
+	\end{equation}
+	Após multiplicar por 1000 as pressões em \SI{}{\kilo\pascal} e desenvolver os cálculos
+	\begin{eqnarray}
+		h_{b}&=&\dfrac{336\,800-(-12\,900)}{9810}+9.1+1.25\\
+			 &\approx&\SI{46}{\meter}
+	\end{eqnarray}
+	Dessa forma, a potência dissipada pela bomba é dada por
+	\begin{equation}
+		P=\gamma_{\ce{H2O}}\,Q\,h_{b}
+	\end{equation}
+	Substituindo
+	\begin{eqnarray}
+		P&=&9810\cdot 1.821667\cdot 10^{-2}\cdot 46\\
+		 &=&\SI{8220.454}{\watt}=\SI{11.2}{cv}
+	\end{eqnarray}
 \end{document}
