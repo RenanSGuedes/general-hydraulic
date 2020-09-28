@@ -60,12 +60,12 @@ left=3cm
 	\end{equation}
 	assim
 	\begin{eqnarray}
-		Q_{2}&=&v_{2}\cdot\dfrac{\pi\cdot d^{2}}{4}\Rightarrow\\
-		\Rightarrow	v_{2}&=&\dfrac{4\cdot Q_{2}}{\pi\cdot d^{2}}
+		Q_{2}&=&v_{2}\cdot\dfrac{\pi d^{2}}{4}\Rightarrow\\
+		\Rightarrow	v_{2}&=&\dfrac{4Q_{2}}{\pi d^{2}}
 	\end{eqnarray}
 	como $d_{2}=\SI{50}{\milli\meter}=\SI{.05}{\meter}$, vem
 	\begin{eqnarray}
-		v_{2}&=&\dfrac{4\cdot 0.0277}{\pi\cdot 0.05^{2}}\\
+		v_{2}&=&\dfrac{4\cdot 0.00277}{\pi\cdot 0.05^{2}}\\
 			 &=&\SI{1.411}{\meter/\second}
 	\end{eqnarray}
 	Substituindo em \eqref{eq:bernoulli}
@@ -73,5 +73,78 @@ left=3cm
 		h_{b}&=&Z_{2}+\dfrac{v_{2}^{2}}{2g}+\dfrac{p_{2}}{\gamma}+hf_{1-2}\\
 			 &=&46.3+\dfrac{1.411^{2}}{2\cdot 9.81}+\dfrac{392\,400}{9\,810}+15\\
 			 &=&\SI{101.40}{\meter}
+	\end{eqnarray}
+	\section{Segunda questão}
+	Após percorrer o trecho vertical $AB$, a água descarrega em forma de jato na atmosfera, como mostra a figura abaixo. Sabendo que o diâmetro do tubo $A$ é quatro vezes maior que o de $B$ e que a pressão no ponto $A$ é de $\SI{.58}{\kilogram f/\centi\meter^{2}}$, estime a altura $H$ do jato (resultado em \SI{}{\meter}, com duas casas decimais), desprezando as perdas de carga e as perdas devido ao atrito com o ar. O fluido é água ($\gamma_{\ce{H2O}}=\SI{1000}{\kilogram f/\meter^{3}}$)  e a distância vertical entre $A$ e $B$ vale \SI{.3}{\meter}.
+	\begin{center}
+		\includegraphics[width=.3\linewidth]{assets/images/ex2}
+	\end{center}
+	\subsection{Solução}
+	O primeiro trecho analisado estabelece a conservação de energia entre as cotas $A$ e $B$. Ao escrever a equação de Bernoulli nesse caso, obtemos
+	\begin{equation}
+		Z_{A}+\dfrac{v_{A}^{2}}{2g}+\dfrac{p_{A}}{\gamma_{\ce{H2O}}}=Z_{B}+\dfrac{v_{B}^{2}}{2g}+\dfrac{p_{B}}{\gamma_{\ce{H2O}}}+hf_{A-B}
+	\end{equation}
+	A partir da figura e das considerações feitas no enunciado podemos cancelar os seguintes termos
+	\begin{equation}
+	\cancel{Z_{A}}+\dfrac{v_{A}^{2}}{2g}+\dfrac{p_{A}}{\gamma_{\ce{H2O}}}=Z_{B}+\dfrac{v_{B}^{2}}{2g}+\cancelto{p_{B}=p_{\text{atm}}}{\dfrac{p_{B}}{\gamma_{\ce{H2O}}}}+\cancel{hf_{A-B}}
+	\end{equation}
+	logo
+	\begin{equation}
+	\label{eq:bernoulli2}
+	\dfrac{v_{A}^{2}}{2g}+\dfrac{p_{A}}{\gamma_{\ce{H2O}}}=Z_{B}+\dfrac{v_{B}^{2}}{2g}
+	\end{equation}
+	Como o fluxo que atravessa a seção transversal da tubulação em $A$ e $B$ é o mesmo, é possível determinar a relação entre as velocidades e denotar $v_{B}$ como função de $v_{A}$, assim
+	\begin{eqnarray}
+		Q_{A}&=&Q_{B}\\
+		v_{A}\,A_{A}&=&v_{B}\,A_{B}\\
+		v_{A}\,\dfrac{\bcancel{\pi}d_{A}^{2}}{\cancel{4}}&=&v_{B}\,\dfrac{\bcancel{\pi} d_{A}^{2}}{\cancel{4}}\\
+		v_{A}\,d_{A}^{2}&=&v_{B}\,d_{B}^{2}
+	\end{eqnarray}
+	Sendo $d_{A}=4\,d_{B}$, vem
+	\begin{eqnarray}
+		v_{A}\,(4d_{B})^{2}&=&v_{B}\,d_{B}^{2}\\
+		v_{A}&=&\dfrac{v_{B}}{16}
+	\end{eqnarray}
+	Retornando em \eqref{eq:bernoulli2} e substituindo $v_{A}$
+	\begin{eqnarray}
+		\dfrac{(v_{B}/16)^{2}}{2g}+\dfrac{p_{A}}{\gamma_{\ce{H2O}}}&=&x+\dfrac{v_{B}^{2}}{2g}\\
+		\dfrac{v_{B}^{2}}{512g}+\dfrac{p_{A}}{\gamma_{\ce{H2O}}}&=&x+\dfrac{256\,v_{B}^{2}}{512g}\\
+		\dfrac{p_{A}}{\gamma_{\ce{H2O}}}&=&x+\dfrac{255\,v_{B}^{2}}{512g}\\
+		\therefore v_{B}^{2}&=&\left(\dfrac{p_{A}}{\gamma_{\ce{H2O}}}-x\right)\dfrac{512g}{255}\label{eq:squaredvb}
+	\end{eqnarray}
+	Após obter uma relação para $v_{B}$, ao tomar como base as cotas em $B$ e $H$ e aplicar Bernoulli novamente
+	\begin{equation}
+			Z_{B}+\dfrac{v_{B}^{2}}{2g}+\dfrac{p_{B}}{\gamma_{\ce{H2O}}}=Z_{H}+\dfrac{v_{H}^{2}}{2g}+\dfrac{p_{H}}{\gamma_{\ce{H2O}}}+hf_{B-H}
+	\end{equation}
+	cancelando os termos pertinentes, temos
+	\begin{equation}
+		\cancel{Z_{B}}+\dfrac{v_{B}^{2}}{2g}+\cancel{\dfrac{p_{B}}{\gamma_{\ce{H2O}}}}=Z_{H}+\cancel{\dfrac{v_{H}^{2}}{2g}}+\cancel{\dfrac{p_{H}}{\gamma_{\ce{H2O}}}}+\cancel{hf_{B-H}}
+	\end{equation}
+	então
+	\begin{eqnarray}
+		\label{eq:bernoulliBtoH}
+		\dfrac{v_{B}^{2}}{2g}&=&Z_{H}
+	\end{eqnarray}
+	Substituindo \eqref{eq:squaredvb} em \eqref{eq:bernoulliBtoH}
+	\begin{eqnarray}
+		\left(\dfrac{p_{A}}{\gamma_{\ce{H2O}}}-x\right)\dfrac{512\cancel{g}}{255}&=&2\,\cancel{g}\,Z_{H}\\
+		Z_{H}&=&\left(\dfrac{p_{A}}{\gamma_{\ce{H2O}}}-x\right)\dfrac{512}{510}\label{eq:zh}
+	\end{eqnarray}
+	A pressão em $A$ deve ser convertida para Pascal (Pa)
+	\begin{eqnarray}
+		p_{A}&=&\SI{.58}{\kilogram f/\centi\meter^{2}}\\
+			 &=&\dfrac{0.58\cdot 9.81}{(10^{-2})^{2}}\SI{}{\dfrac{\newton}{\meter^{2}}}\\
+			 &=&\SI{56989}{\pascal}
+	\end{eqnarray}
+	e o peso específico em $\SI{}{\newton/\meter^{3}}$
+	\begin{eqnarray}
+		\gamma_{\ce{H2O}}&=&\SI{1000}{\kilogram f/\meter^{3}}\\
+						 &=&1000\cdot 9.81\,\SI{}{\newton/\meter^{3}}\\
+						 &=&\SI{9810}{\newton/\meter^{3}}
+	\end{eqnarray}
+	como $x=\SI{.3}{\meter}$, após substituir em \eqref{eq:zh} é obtido $Z_{H}=H$
+	\begin{eqnarray}
+		Z_{H}&=&\left(\dfrac{56\,989}{9\,810}-0.3\right)\dfrac{512}{510}\\
+			 &=&\SI{5.53}{\meter}
 	\end{eqnarray}
 \end{document}
