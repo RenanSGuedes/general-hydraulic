@@ -23,6 +23,7 @@ left=3cm
 \usepackage{multirow}
 \usepackage{cancel}
 \usepackage[version=4]{mhchem}
+\newcommand{\purple}[1]{\textcolor{magenta}{#1}}
 
 \usepackage{config}
 
@@ -72,7 +73,7 @@ left=3cm
 	\begin{eqnarray}
 		h_{b}&=&Z_{2}+\dfrac{v_{2}^{2}}{2g}+\dfrac{p_{2}}{\gamma}+hf_{1-2}\\
 			 &=&46.3+\dfrac{1.411^{2}}{2\cdot 9.81}+\dfrac{392\,400}{9\,810}+15\\
-			 &=&\SI{101.40}{\meter}
+			 &=&\purple{\SI{101.40}{\meter}}
 	\end{eqnarray}
 	\section{Segunda questão}
 	Após percorrer o trecho vertical $AB$, a água descarrega em forma de jato na atmosfera, como mostra a figura abaixo. Sabendo que o diâmetro do tubo $A$ é quatro vezes maior que o de $B$ e que a pressão no ponto $A$ é de $\SI{.58}{\kilogram f/\centi\meter^{2}}$, estime a altura $H$ do jato (resultado em \SI{}{\meter}, com duas casas decimais), desprezando as perdas de carga e as perdas devido ao atrito com o ar. O fluido é água ($\gamma_{\ce{H2O}}=\SI{1000}{\kilogram f/\meter^{3}}$)  e a distância vertical entre $A$ e $B$ vale \SI{.3}{\meter}.
@@ -145,7 +146,7 @@ left=3cm
 	como $x=\SI{.3}{\meter}$, após substituir em \eqref{eq:zh} é obtido $Z_{H}=H$
 	\begin{eqnarray}
 		Z_{H}&=&\left(\dfrac{56\,898}{9\,810}-0.3\right)\dfrac{512}{510}\\
-			 &=&\SI{5.52}{\meter}
+			 &=&\purple{\SI{5.52}{\meter}}
 	\end{eqnarray}
 	\section{Terceira questão}
 	A seção 1 possui diâmetro de \SI{15.4}{\milli\meter}, pressão manométrica de \SI{331}{\kilo\pascal} e velocidade média de escoamento de \SI{2}{\meter/\second}. A seção 2 possui \SI{58.9}{\milli\meter} de diâmetro. Supondo que não existe perdas de energia entre os pontos 1 e 2, calcular a pressão relativa no ponto 2 (resposta em \SI{}{\kilo\pascal}, com 2 casas decimais). Os desníveis verticais em relação ao plano de referência são: $h_{1}=\SI{0}{\meter}$ e $h_{2}=\SI{4.9}{\meter}$. O fluido é água, cujo peso específico é $\SI{9810}{\newton/\meter^{3}}$.
@@ -170,7 +171,7 @@ left=3cm
 		\cancel{Z_{1}}+\dfrac{v_{1}^{2}}{2g}+\dfrac{p_{1}}{\gamma_{\ce{H2O}}}&=&Z_{2}+\dfrac{v_{2}^{2}}{2g}+\dfrac{p_{2}}{\gamma_{\ce{H2O}}}+\cancelto{\textrm{desprezível}}{hf_{1-2}}\\
 		p_{2}&=&\gamma_{\ce{H2O}}\left(\dfrac{v_{1}^{2}-v_{2}^{2}}{2g}+\dfrac{p_{1}}{\gamma_{\ce{H2O}}}-Z_{2}\right)\\
 			 &=&9\,810\cdot\left(\dfrac{2^{2}-0.1367^{2}}{2\cdot 9.81}+\dfrac{331\,000}{9\,810}-4.9\right)\\
-			 &=&\SI{284921.653}{\pascal}=\SI{284.92}{\kilo\pascal}
+			 &=&\SI{284921.653}{\pascal}=\purple{\SI{284.92}{\kilo\pascal}}
 	\end{eqnarray}
 	\section{Quarta questão}
 	Na figura, os diâmetros da sucção e recalque são de 3 e 2 polegadas, respectivamente. As pressões relativas nos pontos 1 e 2 são \SI{-12.9}{\kilo\pascal} e \SI{336.8}{\kilo\pascal}, respectivamente. Pela tubulação passa água na vazão de \SI{1093}{\liter/\minute}. A perda de carga entre os pontos 1 e 2 é de \SI{1.25}{\meter} e o desnível vertical $h$ é de \SI{9.1}{\meter}. Calcule a potência hidráulica da bomba em cv (uma casa decimal).
@@ -210,7 +211,7 @@ left=3cm
 	Substituindo
 	\begin{eqnarray}
 		P&=&9810\cdot 1.821667\cdot 10^{-2}\cdot 46\\
-		 &=&\SI{8220.454}{\watt}=\SI{11.2}{cv}
+		 &=&\SI{8220.454}{\watt}=\purple{\SI{11.2}{cv}}
 	\end{eqnarray}
 	\section{Quinta questão}
 	A figura abaixo representa um Tubo Venturi empregado para a medição de vazão em condutos pressurizados. O Tubo Venturi está equipado com um manômetro diferencial de mercúrio. O diâmetro da seção de escoamento 1 é \SI{14.5}{\centi\meter} e da seção 2 é \SI{3.3}{\centi\meter}. Calcular a vazão teórica de água sabendo que a deflexão manométrica $\Delta h$ é \SI{34.3}{\centi\meter}. Expressar a resposta em $\SI{}{\meter^{3}/\hour}$ com duas casas decimais.
@@ -271,12 +272,12 @@ left=3cm
 	Ao substituir os valores de diâmetros fornecidos, temos
 	\begin{eqnarray}
 		v_{1}\cdot 0.145^{2}&=&v_{2}\cdot 0.033^{2}\\
-		\therefore v_{2}&\approx&19.31\cdot v_{1}\label{eq:v2}
+		\therefore v_{2}&\approx&19.3067\cdot v_{1}\label{eq:v2}
 	\end{eqnarray}
 	Substituindo \eqref{eq:v2} em \eqref{eq:vel} e manipulando a equação
 	\begin{equation}
 		\label{eq:v1}
-		v_{1}=\sqrt{\dfrac{g\,(p_{1}-p_{2})}{186.43\,\gamma_{\ce{H2O}}}}
+		v_{1}=\sqrt{\dfrac{g\,(p_{1}-p_{2})}{185.8744\cdot\gamma_{\ce{H2O}}}}
 	\end{equation}
 	Retornando em \eqref{eq:ps} e substituindo os pesos específicos e a deflexão manométrica fornecidos, vem
 	\begin{eqnarray}
@@ -285,15 +286,15 @@ left=3cm
 	\end{eqnarray}
 	Ao substituir o valor obtido anteriormente em \eqref{eq:v1}, chegamos que
 	\begin{eqnarray}
-		v_{1}&=&\sqrt{\dfrac{9.81\cdot 42\,396.858}{186.43\cdot 9810}}\\
-		 	 &=&\SI{0.4768}{\meter/\second}
+		v_{1}&=&\sqrt{\dfrac{9.81\cdot 42\,396.858}{185.8744\cdot 9810}}\\
+		 	 &=&\SI{0.4776}{\meter/\second}
 	\end{eqnarray}
 	Logo o fluxo no tubo será
 	\begin{eqnarray}
 		Q&=&Q_{1}\\
 		 &=&v_{1}\cdot A_{1}\\
 		 &=&v_{1}\cdot\dfrac{\pi d_{1}^{2}}{4}\\
-		 &=&0.4768\cdot\dfrac{\pi\cdot 0.145^{2}}{4}\\
-		 &=&\SI{7.873396}{\meter^{3}/\second}=\SI{28.34}{\meter^{3}/\hour}
+		 &=&0.4776\cdot\dfrac{\pi\cdot 0.145^{2}}{4}\\
+		 &=&\SI{7.886607e-3}{\meter^{3}/\second}=\purple{\SI{28.39}{\meter^{3}/\hour}}
 	\end{eqnarray}
 \end{document}
