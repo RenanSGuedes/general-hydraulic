@@ -61,8 +61,17 @@
         * Lei de Stevin
         * Pressão relativa e absoluta
         * Instrumentos de medição de pressão
-- [ ] Parte 2
+- [x] Parte 2
     * Hidrodinâmica
+        * Equação da continuidade
+        * Equação de Bernoulli
+            * Perda de carga
+            * Bomba
+                * Incremento de energia no escoamento
+            * Turbina
+                * Decremento de energia no escoamento
+            * Tubo Venturi
+                * Empregado para medição de vazão em condutos pressurizados. É comum encontrar um manômetro diferencial acoplado ao longo de seu comprimento. Por meio da deflexão manométrica presente nos capilares é possível estimar a vazão do fluido em questão.
 - [ ] Parte 3
     * Orifícios
 - [ ] Parte 4
