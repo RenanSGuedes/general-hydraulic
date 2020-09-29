@@ -212,4 +212,88 @@ left=3cm
 		P&=&9810\cdot 1.821667\cdot 10^{-2}\cdot 46\\
 		 &=&\SI{8220.454}{\watt}=\SI{11.2}{cv}
 	\end{eqnarray}
+	\section{Quinta questão}
+	A figura abaixo representa um Tubo Venturi empregado para a medição de vazão em condutos pressurizados. O Tubo Venturi está equipado com um manômetro diferencial de mercúrio. O diâmetro da seção de escoamento 1 é \SI{14.5}{\centi\meter} e da seção 2 é \SI{3.3}{\centi\meter}. Calcular a vazão teórica de água sabendo que a deflexão manométrica $\Delta h$ é \SI{34.3}{\centi\meter}. Expressar a resposta em $\SI{}{\meter^{3}/\hour}$ com duas casas decimais.
+	\begin{center}
+		\includegraphics[width=.9\linewidth]{assets/images/ex5}
+	\end{center}
+	\noindent Informações adicionais:
+	\begin{itemize}
+		\item Tubo de Venturi está instalado em nível.
+		\item Despreza a perda de carga entre os ponto. 1 e 2 
+		\item $\rho_{\ce{Hg}}=\SI{13.6}{\gram/\centi\meter^{3}}$
+		\item $\rho_{\ce{H2O}}=\SI{1000}{\kilogram/\meter^{3}}$
+	\end{itemize}
+	\subsection{Solução}
+	Primeiramente, estabelecendo o referencial na parte inferior do tubo é possível obter a relação das pressões atuantes em cada ponto devido a ação das colunas de água e mercúrio acima de cada um e, a partir disso, chegar numa equação que relaciona a diferença de pressão entre os pontos 1 e 2, como segue
+	\begin{center}
+		\includegraphics[width=.9\linewidth]{assets/images/referencia_5}
+	\end{center}
+
+	$$
+	\begin{cases}
+		p_{A}=\gamma_{\ce{H2O}}(y+\Delta h)+\gamma_{\ce{Hg}}\,x+p_{1}\\
+		p_{B}=\gamma_{\ce{H2O}}\,y+\gamma_{\ce{Hg}}(\Delta h+x)+p_{2}
+	\end{cases}
+	\Rightarrow
+	\begin{cases}
+		p_{A}=\gamma_{\ce{H2O}}\,y+\gamma_{\ce{H2O}}\,\Delta h+\gamma_{\ce{Hg}}\,x+p_{1}\\
+		p_{B}=\gamma_{\ce{H2O}}\,y+\gamma_{\ce{Hg}}\,\Delta h+\gamma_{\ce{Hg}}\,x+p_{2}
+	\end{cases}
+	$$
+	Como $p_{A}=p_{B}$
+	\begin{eqnarray}
+		\gamma_{\ce{H2O}}\,y+\gamma_{\ce{H2O}}\,\Delta h+\gamma_{\ce{Hg}}\,x+p_{1}&=&\gamma_{\ce{H2O}}\,y+\gamma_{\ce{Hg}}\,\Delta h+\gamma_{\ce{Hg}}\,x+p_{2}\\
+		\cancel{\gamma_{\ce{H2O}}\,y}+\gamma_{\ce{H2O}}\,\Delta h+\bcancel{\gamma_{\ce{Hg}}\,x}+p_{1}&=&\cancel{\gamma_{\ce{H2O}}\,y}+\gamma_{\ce{Hg}}\,\Delta h+\bcancel{\gamma_{\ce{Hg}}\,x}+p_{2}
+	\end{eqnarray}
+	Isolando a diferença $p_{1}-p_{2}$
+	\begin{equation}
+		\label{eq:ps}
+		p_{1}-p_{2}=(\gamma_{\ce{Hg}}-\gamma_{\ce{H2O}})\,\Delta h
+	\end{equation}
+	Feito isso, se analisarmos o Tubo de Venturi nos pontos 1 e 2 a aplicarmos Bernoulli, vem
+	\begin{equation}
+		Z_{1}+\dfrac{v_{1}^{2}}{2g}+\dfrac{p_{1}}{\gamma_{\ce{H2O}}}=Z_{2}+\dfrac{v_{2}^{2}}{2g}+\dfrac{p_{2}}{\gamma_{\ce{H2O}}}+hf_{1-2}
+	\end{equation}
+	Como o tubo está em nível as cargas de posição podem ser desprezadas. O mesmo vale para o último termo do lado direito da equação que corresponde à perda de carga de 1 para 2. 
+	\begin{equation}
+		\cancel{Z_{1}}+\dfrac{v_{1}^{2}}{2g}+\dfrac{p_{1}}{\gamma_{\ce{H2O}}}=\cancel{Z_{2}}+\dfrac{v_{2}^{2}}{2g}+\dfrac{p_{2}}{\gamma_{\ce{H2O}}}+\bcancel{hf_{1-2}}
+	\end{equation}
+	Portanto
+	\begin{equation}
+		\label{eq:vel}
+		\dfrac{v_{1}^{2}}{2g}+\dfrac{p_{1}}{\gamma_{\ce{H2O}}}=\dfrac{v_{2}^{2}}{2g}+\dfrac{p_{2}}{\gamma_{\ce{H2O}}}
+	\end{equation}
+	Após obter a equação anterior que relaciona as velocidades e as pressões da água em cada ponto, é necessário encontrar outra relação entre as velocidades que permita que a equação de cima dependa de apenas uma delas. Sabe-se que o fluxo que atravessa 1 e 2 é o mesmo, sendo assim aplicando a equação da continuidade podemos escrever
+	\begin{equation}
+		v_{1}\,d_{1}^{2}=v_{2}\,d_{2}^{2}
+	\end{equation}
+	Ao substituir os valores de diâmetros fornecidos, temos
+	\begin{eqnarray}
+		v_{1}\cdot 0.145^{2}&=&v_{2}\cdot 0.033^{2}\\
+		\therefore v_{2}&\approx&19.31\cdot v_{1}\label{eq:v2}
+	\end{eqnarray}
+	Substituindo \eqref{eq:v2} em \eqref{eq:vel} e manipulando a equação
+	\begin{equation}
+		\label{eq:v1}
+		v_{1}=\sqrt{\dfrac{g\,(p_{1}-p_{2})}{186.43\,\gamma_{\ce{H2O}}}}
+	\end{equation}
+	Retornando em \eqref{eq:ps} e substituindo os pesos específicos e a deflexão manométrica fornecidos, vem
+	\begin{eqnarray}
+		p_{1}-p_{2}&=&(13\,600-1000)\cdot 9.81\cdot 0.343\\
+				   &=&\SI{42396.858}{\pascal}
+	\end{eqnarray}
+	Ao substituir o valor obtido anteriormente em \eqref{eq:v1}, chegamos que
+	\begin{eqnarray}
+		v_{1}&=&\sqrt{\dfrac{9.81\cdot 42\,396.858}{186.43\cdot 9810}}\\
+		 	 &=&\SI{0.4768}{\meter/\second}
+	\end{eqnarray}
+	Logo o fluxo no tubo será
+	\begin{eqnarray}
+		Q&=&Q_{1}\\
+		 &=&v_{1}\cdot A_{1}\\
+		 &=&v_{1}\cdot\dfrac{\pi d_{1}^{2}}{4}\\
+		 &=&0.4768\cdot\dfrac{\pi\cdot 0.145^{2}}{4}\\
+		 &=&\SI{7.873396}{\meter^{3}/\second}=\SI{28.34}{\meter^{3}/\hour}
+	\end{eqnarray}
 \end{document}
