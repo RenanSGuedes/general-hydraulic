@@ -1,0 +1,159 @@
+\documentclass[a4paper, 12pt, brazilian]{article}
+\usepackage{config}
+
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{siunitx}
+
+\usepackage[
+top=2cm,
+right=3cm,
+bottom=2cm,
+left=3cm
+]{geometry}
+
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{import}
+\usepackage{float}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{bm}
+\usepackage{multirow}
+\usepackage{cancel}
+\usepackage[version=4]{mhchem}
+\numberwithin{equation}{section}
+
+\begin{document}
+	\section{Primeira questão}
+	Um aspersor com bocal principal de \SI{7.1}{\milli\meter} e bocal secundário de \SI{4.6}{\milli\meter} fornece vazão de $\SI{3.27}{\meter^{3}/\hour}$ na pressão de $\SI{2}{\kilogram f/\centi\meter^{2}}$. Calcule a vazão fornecida pelo aspersor quando a pressão for de $\SI{4.73}{\kilogram f/\centi\meter^{2}}$. Apresentar resultado em $\SI{}{\meter^{3}/\hour}$ com duas casas decimais.
+	\subsection{Solução}
+	Para o problema proposto é possível considerar equação
+	\begin{equation}
+		\dfrac{Q_{1}}{Q_{2}}=\sqrt{\dfrac{h_{1}}{h_{1}}}
+	\end{equation}
+	onde $Q_{1}$ e $Q_{2}$ são as vazões antes e depos da variação de pressões, respectivamente. Nesse caso os valores de $h$ considerarão a pressão de água no aspersor em cada instante, logo
+	\begin{eqnarray}
+		\dfrac{3.27}{Q_{2}}&=&\sqrt{\dfrac{2}{4.73}}\\
+		Q_{2}&=&\SI{5.03}{\meter^{3}/\hour}
+	\end{eqnarray}
+	Note que a equação considerada dispensa a perda de carga ($C_{d}$) nos bocais e as características geométricas da seção transversal já que antes e depois o arranjo é o mesmo.
+	\section{Segunda questão}
+	A figura abaixo ilustra um bueiro (ou galeria) de seção de escoamento quadrada instalado sob uma estrada. A seção de escoamento do bueiro deve ser projetada para que na condição de vazão máxima o nível da água na entrada do bueiro seja igual a altura ($l$) do bueiro. Considere que o coeficiente de descarga para a condição de projeto vale $0.54$. O projeto deve considerar que a vazão máxima na área de contribuição do bueiro é de $\SI{392}{\meter^{3}\hour^{-1}\hectare^{-1}}$. A área de contribuição tem $21.4$ hectares. Determine a largura da seção do bueiro (resultado em metros, com 3 casas decimais).
+	\begin{itemize}
+		\item$\SI{1}{\hectare}=\SI{10000}{\meter^{2}}$
+		\item Considere que é um problema de orifícios grandes.
+	\end{itemize}
+	\subsection{Solução}
+	Aplicando a equação da vazão para orifícios grandes, vem
+	\begin{equation}
+		Q=\dfrac{2}{3}\,\sqrt{2g}\,C_{d}\,L\,(h_{2}^{3/2}-h_{1}^{3/2})
+	\end{equation}
+	A partir da geometria do exercício, chega-se que $L=l$, $h_{1}=0$ e $h_{2}=l$, assim
+	\begin{equation}
+		Q=\dfrac{2}{3}\,\sqrt{2g}\,C_{d}\,l^{5/2}
+	\end{equation}
+	Substituindo os dados fornecidos e considerando as devidas conversões
+	\begin{eqnarray}
+		\dfrac{392\cdot 21.4}{3600}&=&\dfrac{2}{3}\cdot\sqrt{2\cdot 9.81}\cdot 0.54\cdot l^{5/2}\\
+		l&=&\SI{1.164}{\meter}
+	\end{eqnarray}
+	\section{Terceira questão}
+	Um tanque com dimensões desconhecidas é completamente esvaziado de um orifício de fundo ($C_{d}=0.61$) em 87 minutos. Calcule o novo tempo de esvaziamento após adaptarmos ao orifício um bocal cilíndrico de mesmo diâmetro interno, porém com $C_{c}=1.00$ e $C_{v}=0.81$. Apresente o resultado em minutos, com duas casas decimais.
+	\subsection{Solução}
+	O tempo de esvaziamento por orifícios e bocais é dado por
+	\begin{equation}
+		\Delta t=\dfrac{2\,A_{\textrm{reservatório}}}{C_{d}\,A_{\textrm{orifício}}\,\sqrt{2g}}(h_{1}^{1/2}-h_{2}^{1/2})
+	\end{equation}
+	No primeiro instante
+	\begin{eqnarray}
+		87\cdot 60&=&\dfrac{2\cdot A_{\textrm{reservatório}}\cdot x^{1/2}}{0.61\cdot A_{\textrm{orifício}}\cdot\sqrt{2\cdot 9.81}}\\
+		\dfrac{A_{\textrm{reservatório}}\cdot x^{1/2}}{A_{\textrm{orifício}}\cdot\sqrt{2g}}&=&1592.1=\textrm{constante}
+	\end{eqnarray}
+	De forma análoga, para o bocal adaptado, temos
+	\begin{eqnarray}
+		\Delta t&=&\dfrac{2\,\textrm{constante}}{C_{d}}\\
+		&=&\dfrac{2\,\textrm{constante}}{C_{c}\,C_{v}}\\
+		&=&\dfrac{2\cdot 1592.1}{1\cdot 0.81}\\
+		\Delta t&=&\SI{3931.111}{\second}\\
+		&=&\SI{65.52}{\minute}
+	\end{eqnarray}
+	\section{Quarta questão}
+	Objetivando-se calibrar uma placa de orifício com $d/D=0.5$ (ou seja, $\beta=0.5$) instalada numa tubulação de \SI{150}{\milli\meter} de diâmetro, utilizou-se um tanque volumétrico de formato cilíndrico com \SI{1.5}{\meter} de diâmetro para coletar o volume de água descarregado num intervalo de tempo e, deste modo, determinar a vazão real através da tubulação. Considere que a placa de orifício é equipada com um manômetro diferencial de mercúrio. Quando o manômetro diferencial acusava uma deflexão manométrica de \SI{18.3}{\milli\meter} de coluna de mercúrio, havia a variação do nível d'água no tanque volumétrico de \SI{82.2}{\centi\meter} em 5 minutos. Calcule o coeficiente de descarga da placa de orifício. (Tubulação em nível: $Z_{1}=Z_{2}$; $\gamma_{\ce{Hg}}=\SI{13600}{\kilogram f/\meter^{3}}$; $\gamma_{\ce{H2O}}=\SI{1000}{\kilogram f/\meter^{3}}$).
+	\begin{itemize}
+		\item Resultado com 3 casas decimais.
+		\item Utilizar pelo menos 4 algarismos significativos em todos os cálculos.
+	\end{itemize}
+	\subsection{Solução}
+	A primeira consideração a ser feita diz respeito a diferença de pressão indicada nos pontos 1 e 2 pelo manômetro diferencial. Da aula anterior, para a mesma situação estudada, tem-se a seguinte equação pode ser aplicada
+	\begin{equation}
+		\label{eq:pressoes}
+		p_{1}-p_{2}=(\gamma_{\ce{Hg}}-\gamma_{\ce{H2O}})\,\Delta h
+	\end{equation}
+	onde $\Delta$ é a deflexão manométrica.\\
+	Ao aplicar a equação de Bernoulli no trecho analisado, é possível escrever
+	\begin{equation}
+		\label{eq:bernoulli}
+		\dfrac{p_{1}-p_{2}}{\gamma_{\ce{H2O}}}=\dfrac{v_{2}^{2}-v_{1}^{2}}{2g}
+	\end{equation}
+	Substituindo \eqref{eq:pressoes} em \eqref{eq:bernoulli}, vem
+	\begin{equation}
+		\label{eq:bernoulli1}
+		\dfrac{(\gamma_{\ce{Hg}}-\gamma_{\ce{H2O}})\,\Delta h}{\gamma_{\ce{H2O}}}=\dfrac{v_{2}^{2}-v_{1}^{2}}{2g}
+	\end{equation}
+	Ao considerar que o fluxo no estrangulamento é o mesmo em 1 e 2, aplicando a equação da continuidade
+	\begin{equation}
+		A_{1}\,v_{1}=A_{2}\,v_{2}
+	\end{equation}
+	logo
+	\begin{equation}
+	\label{eq:continuidade}
+		D^{2}\,v_{1}=d^{2}\,v_{2}
+	\end{equation}
+	sendo $\beta=0.5$, tem-se que
+	\begin{equation}
+		\dfrac{d}{D}=0.5
+	\end{equation}
+	para $D=\SI{150}{\milli\meter}=\SI{0.15}{\meter}$, vem
+	\begin{equation}
+		d=\SI{0.075}{\meter}
+	\end{equation}
+	Substituindo o valor de $d$ em \eqref{eq:continuidade}
+	\begin{eqnarray}
+		0.15^{2}\,v_{1}&=&0.075^{2}\,v_{2}\\
+		v_{2}&=&4v_{1}
+	\end{eqnarray}
+	Se for substituído o valor de $v_{2}$ em \eqref{eq:bernoulli1}
+	\begin{equation}
+		\label{eq:bernoulli1}
+		\dfrac{(\gamma_{\ce{Hg}}-\gamma_{\ce{H2O}})\,\Delta h}{\gamma_{\ce{H2O}}}=\dfrac{15\,v_{1}^{2}}{2g}
+	\end{equation}
+	dessa forma
+	\begin{eqnarray}
+		\dfrac{(13\,600-1000)\cdot 0.0183}{1000}&=&\dfrac{15\,v_{1}^{2}}{2\cdot 9.81}\\
+		v_{1}&=&\SI{0.549}{\meter/\second}
+	\end{eqnarray}
+	A vazão teórica é dada por
+	\begin{eqnarray}
+		Q_{\textrm{teórica}}&=&v_{2}\,A_{\textrm{orifício}}\\
+		&=&2.1967\cdot\dfrac{\pi\cdot 0.075^{2}}{4}\\
+		&=&\SI{9.705e-3}{\meter^{3}/\second}
+	\end{eqnarray}
+	a vazão real $Q$ será dada em função da variação do nível de fluido no reservatório ao longo do tempo, assim
+	\begin{eqnarray}
+		Q&=&\dfrac{V}{\Delta t}\\
+		 &=&\dfrac{A\,\Delta h'}{\Delta t}\\
+		 &=&\dfrac{\pi\,d'^{2}}{4}\dfrac{\Delta h'}{\Delta t}\\
+		 &=&\dfrac{\pi\cdot 1.5^{2}}{4}\cdot\dfrac{0.822}{5\cdot 60}\\
+		 &=&\SI{4.842e-3}{\meter^{3}/\second}
+	\end{eqnarray}
+	portanto, a perda de carga $C_{d}$ será
+	\begin{eqnarray}
+		C_{d}&=&\dfrac{Q}{Q_{\textrm{teórica}}}\\
+		&=&\dfrac{4.842\cdot \cancel{10^{-3}}}{9.705\cdot \cancel{10^{-3}}}\\
+		&=&0.499
+	\end{eqnarray}
+\end{document}
